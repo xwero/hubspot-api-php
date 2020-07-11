@@ -9,6 +9,7 @@ use HubSpot\Client\Cms\Domains\Api\DomainsApi;
 use HubSpot\Client\Cms\SiteSearch\Api\DefaultApi;
 use HubSpot\Client\Cms\UrlRedirects\Api\RedirectsApi;
 use HubSpot\Client\Cms\UrlRedirects\Model\UrlMapping;
+use HubSpot\Client\Cms\UrlRedirects\Model\UrlMappingCreateRequestBody;
 
 final class CMS
 {
@@ -305,7 +306,7 @@ final class CMS
             ->getById($redirectId);
     }
 
-    public function getedirectByIdAsync(string $redirectId)
+    public function getRedirectByIdAsync(string $redirectId)
     {
         return (new RedirectsApi($this->client, $this->config))
             ->getByIdAsync($redirectId);
